@@ -108,7 +108,6 @@ int main(void)
 	  if(timer_flag[1] == 1){
 		  setTimer(1, 25);
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		  if(index_led < MAX_LED){
 			  update7SEG(index_led++);
 		  }
@@ -165,6 +164,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
 	timerRun(1);
+	timerRun(2);
 }
 
 void display7SEG(int num){

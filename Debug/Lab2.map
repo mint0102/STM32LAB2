@@ -2360,14 +2360,15 @@ LOAD d:/set stm32/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.m
  .text.MX_GPIO_Init
                 0x000000000800014c       0xa8 ./Core/Src/gpio.o
                 0x000000000800014c                MX_GPIO_Init
- .text.main     0x00000000080001f4       0xa0 ./Core/Src/main.o
+ .text.main     0x00000000080001f4       0x98 ./Core/Src/main.o
                 0x00000000080001f4                main
  .text.SystemClock_Config
-                0x0000000008000294       0x76 ./Core/Src/main.o
-                0x0000000008000294                SystemClock_Config
+                0x000000000800028c       0x76 ./Core/Src/main.o
+                0x000000000800028c                SystemClock_Config
  .text.HAL_TIM_PeriodElapsedCallback
-                0x000000000800030a       0x16 ./Core/Src/main.o
-                0x000000000800030a                HAL_TIM_PeriodElapsedCallback
+                0x0000000008000302       0x1c ./Core/Src/main.o
+                0x0000000008000302                HAL_TIM_PeriodElapsedCallback
+ *fill*         0x000000000800031e        0x2 
  .text.display7SEG
                 0x0000000008000320      0x11c ./Core/Src/main.o
                 0x0000000008000320                display7SEG
