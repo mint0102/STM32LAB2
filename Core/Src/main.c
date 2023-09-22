@@ -102,6 +102,7 @@ int main(void)
   {
 	  if(timer1_flag == 1){
 		  setTimer1(50);
+		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 		  led_flag = 1;
 		  switch(status){
 		  	  case LED_0:
