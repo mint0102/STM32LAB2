@@ -97,11 +97,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(50);
+  setTimer(1, 50);
   while (1)
   {
-	  if(timer1_flag == 1){
-		  setTimer1(50);
+	  if(timer_flag[1] == 1){
+		  setTimer(1, 50);
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 		  led_flag = 1;
 		  switch(status){
@@ -198,7 +198,7 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
-	timerRun();
+	timerRun(1);
 }
 
 void display7SEG(int num){

@@ -5,19 +5,19 @@
  *      Author: HaHuyen
  */
 
-int timer1_counter = 0;
-int timer1_flag = 0;
+int timer_counter[20] = {0};
+int timer_flag[20] = {0};
 
-void setTimer1(int duration){
-	timer1_counter = duration;
-	timer1_flag = 0;
+void setTimer(int index, int duration){
+	timer_counter[index] = duration;
+	timer_flag[index] = 0;
 }
 
-void timerRun(){
-	if(timer1_counter > 0){
-		timer1_counter--;
-		if(timer1_counter <= 0){
-			timer1_flag = 1;
+void timerRun(int index){
+	if(timer_counter[index] > 0){
+		timer_counter[index]--;
+		if(timer_counter[index] <= 0){
+			timer_flag[index] = 1;
 		}
 	}
 }
