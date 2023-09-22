@@ -52,6 +52,7 @@ uint8_t led_flag = 0;
 const int MAX_LED = 4;
 int index_led = 0;
 int led_buffer[4] = {1, 2, 3, 4};
+int hour = 15, minute = 8, second = 50;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -59,6 +60,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void display7SEG(int num);
 void update7SEG(int index);
+void updateClockBuffer();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -101,14 +103,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(1, 25);
-  setTimer(2, 50);
+  setTimer(1, 2);
+  setTimer(2, 3);
+  setTimer(3, 100);
   while (1)
   {
 	  if(timer_flag[1] == 1){
 		  setTimer(1, 25);
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		  if(index_led < MAX_LED){
 			  update7SEG(index_led++);
 		  }
@@ -119,6 +121,22 @@ int main(void)
 	  if(timer_flag[2] == 1){
 		  setTimer(2, 50);
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+	  }
+	  if(timer_flag[3] == 1){
+		  setTimer(3, 100);
+		  second++;
+		  if (second >= 60){
+			  second = 0;
+			  minute++;
+		  }
+		  if(minute >= 60){
+			  minute = 0;
+			  hour++;
+		  }
+		  if(hour >=24){
+			  hour = 0;
+		  }
+		  updateClockBuffer();
 	  }
     /* USER CODE END WHILE */
 
@@ -165,6 +183,8 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
 	timerRun(1);
+	timerRun(2);
+	timerRun(3);
 }
 
 void display7SEG(int num){
@@ -244,6 +264,13 @@ void update7SEG(int index){
         default:
             break;
     }
+}
+
+void updateClockBuffer(){
+	led_buffer[0] = hour/10;
+	led_buffer[1] = hour%10;
+	led_buffer[2] = minute/10;
+	led_buffer[3] = minute%10;
 }
 
 /* USER CODE END 4 */
