@@ -101,15 +101,24 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(1, 50);
+  setTimer(1, 25);
+  setTimer(2, 50);
   while (1)
   {
 	  if(timer_flag[1] == 1){
-		  setTimer(1, 50);
+		  setTimer(1, 25);
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 		  if(index_led < MAX_LED){
 			  update7SEG(index_led++);
 		  }
+		  if(index_led >= MAX_LED){
+			  index_led = 0;
+		  }
+	  }
+	  if(timer_flag[2] == 1){
+		  setTimer(2, 50);
+		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	  }
     /* USER CODE END WHILE */
 
