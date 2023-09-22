@@ -98,6 +98,7 @@ int main(void)
 	  if(timer1_flag == 1){
 		  setTimer1(50);
 		  status = 1 - status;
+		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 		  if(status == 0){
 			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
 			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
