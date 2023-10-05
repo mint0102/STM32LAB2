@@ -298,28 +298,6 @@ void displayLEDMatrix(void) {
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, (matrix_buffer[col] & 0x80) ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
 
-void updateLEDMatrix(int index){
-    switch (index){
-        case 0:
-            break;
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        case 5:
-            break;
-        case 6:
-            break;
-        case 7:
-            break;
-        default:
-            break;
-    }
-}
 void updateClockBuffer(){
 	led_buffer[0] = hour/10;
 	led_buffer[1] = hour%10;
