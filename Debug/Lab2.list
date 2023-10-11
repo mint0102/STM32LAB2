@@ -226,16 +226,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(1, 2);
- 800020e:	2102      	movs	r1, #2
+  setTimer(1, 25);
+ 800020e:	2119      	movs	r1, #25
  8000210:	2001      	movs	r0, #1
  8000212:	f000 fa1f 	bl	8000654 <setTimer>
-  setTimer(2, 3);
- 8000216:	2103      	movs	r1, #3
+  setTimer(2, 50);
+ 8000216:	2132      	movs	r1, #50	; 0x32
  8000218:	2002      	movs	r0, #2
  800021a:	f000 fa1b 	bl	8000654 <setTimer>
-  setTimer(3, 5);
- 800021e:	2105      	movs	r1, #5
+  setTimer(3, 100);
+ 800021e:	2164      	movs	r1, #100	; 0x64
  8000220:	2003      	movs	r0, #3
  8000222:	f000 fa17 	bl	8000654 <setTimer>
   while (1)
@@ -299,8 +299,8 @@ int main(void)
  8000282:	68db      	ldr	r3, [r3, #12]
  8000284:	2b01      	cmp	r3, #1
  8000286:	d1ce      	bne.n	8000226 <main+0x32>
-		  setTimer(3, 5);
- 8000288:	2105      	movs	r1, #5
+		  setTimer(3, 100);
+ 8000288:	2164      	movs	r1, #100	; 0x64
  800028a:	2003      	movs	r0, #3
  800028c:	f000 f9e2 	bl	8000654 <setTimer>
 		  second++;

@@ -103,9 +103,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(1, 2);
-  setTimer(2, 3);
-  setTimer(3, 5);
+  setTimer(1, 25);
+  setTimer(2, 50);
+  setTimer(3, 100);
   while (1)
   {
 	  if(timer_flag[1] == 1){
@@ -123,7 +123,7 @@ int main(void)
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	  }
 	  if(timer_flag[3] == 1){
-		  setTimer(3, 5);
+		  setTimer(3, 100);
 		  second++;
 		  if (second >= 60){
 			  second = 0;
