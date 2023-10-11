@@ -105,7 +105,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   setTimer(1, 2);
   setTimer(2, 3);
-  setTimer(3, 100);
+  setTimer(3, 5);
   while (1)
   {
 	  if(timer_flag[1] == 1){
@@ -123,7 +123,7 @@ int main(void)
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	  }
 	  if(timer_flag[3] == 1){
-		  setTimer(3, 100);
+		  setTimer(3, 5);
 		  second++;
 		  if (second >= 60){
 			  second = 0;
@@ -202,8 +202,8 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(GPIOB, SEG_2_Pin|SEG_5_Pin,GPIO_PIN_SET);
 		break;
 	case 3:
-		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_5_Pin,GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOB, SEG_5_Pin|SEG_4_Pin,GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_6_Pin,GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOB, SEG_4_Pin|SEG_5_Pin,GPIO_PIN_SET);
 		break;
 	case 4:
 		HAL_GPIO_WritePin(GPIOB, SEG_1_Pin|SEG_2_Pin|SEG_5_Pin|SEG_6_Pin,GPIO_PIN_RESET);
@@ -225,7 +225,7 @@ void display7SEG(int num){
 		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_4_Pin|SEG_5_Pin|SEG_6_Pin,GPIO_PIN_RESET);
 		break;
 	case 9:
-		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_6_Pin,GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_5_Pin|SEG_6_Pin,GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(GPIOB, SEG_4_Pin,GPIO_PIN_SET);
 		break;
 	}
