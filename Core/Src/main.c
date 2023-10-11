@@ -110,6 +110,9 @@ int main(void)
 		  if(index_led < MAX_LED){
 			  update7SEG(index_led++);
 		  }
+		  else{
+			  index_led = 0;
+		  }
 	  }
     /* USER CODE END WHILE */
 
