@@ -557,12 +557,12 @@ void display7SEG(int num){
 		break;
  8000428:	e047      	b.n	80004ba <display7SEG+0x10e>
 	case 3:
-		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_5_Pin,GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_6_Pin,GPIO_PIN_RESET);
  800042a:	2200      	movs	r2, #0
- 800042c:	212f      	movs	r1, #47	; 0x2f
+ 800042c:	214f      	movs	r1, #79	; 0x4f
  800042e:	4825      	ldr	r0, [pc, #148]	; (80004c4 <display7SEG+0x118>)
  8000430:	f000 fdec 	bl	800100c <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(GPIOB, SEG_5_Pin|SEG_4_Pin,GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOB, SEG_4_Pin|SEG_5_Pin,GPIO_PIN_SET);
  8000434:	2201      	movs	r2, #1
  8000436:	2130      	movs	r1, #48	; 0x30
  8000438:	4822      	ldr	r0, [pc, #136]	; (80004c4 <display7SEG+0x118>)
@@ -630,9 +630,9 @@ void display7SEG(int num){
 		break;
  80004a2:	e00a      	b.n	80004ba <display7SEG+0x10e>
 	case 9:
-		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_6_Pin,GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOB, SEG_0_Pin|SEG_1_Pin|SEG_2_Pin|SEG_3_Pin|SEG_5_Pin|SEG_6_Pin,GPIO_PIN_RESET);
  80004a4:	2200      	movs	r2, #0
- 80004a6:	214f      	movs	r1, #79	; 0x4f
+ 80004a6:	216f      	movs	r1, #111	; 0x6f
  80004a8:	4806      	ldr	r0, [pc, #24]	; (80004c4 <display7SEG+0x118>)
  80004aa:	f000 fdaf 	bl	800100c <HAL_GPIO_WritePin>
 		HAL_GPIO_WritePin(GPIOB, SEG_4_Pin,GPIO_PIN_SET);
@@ -652,6 +652,7 @@ void display7SEG(int num){
  80004c4:	40010c00 	.word	0x40010c00
 
 080004c8 <update7SEG>:
+
 
 void update7SEG(int index){
  80004c8:	b580      	push	{r7, lr}
