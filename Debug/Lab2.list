@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020040  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00008c1e  00000000  00000000  00020069  2**0
+ 12 .debug_info   00008c26  00000000  00000000  00020069  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001860  00000000  00000000  00028c87  2**0
+ 13 .debug_abbrev 00001882  00000000  00000000  00028c8f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 000009b0  00000000  00000000  0002a4e8  2**3
+ 14 .debug_aranges 000009b0  00000000  00000000  0002a518  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000008d8  00000000  00000000  0002ae98  2**3
+ 15 .debug_ranges 000008d8  00000000  00000000  0002aec8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  000166f8  00000000  00000000  0002b770  2**0
+ 16 .debug_macro  00016702  00000000  00000000  0002b7a0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a32e  00000000  00000000  00041e68  2**0
+ 17 .debug_line   0000a34e  00000000  00000000  00041ea2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000822c5  00000000  00000000  0004c196  2**0
+ 18 .debug_str    000822c5  00000000  00000000  0004c1f0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000ce45b  2**0
+ 19 .comment      00000053  00000000  00000000  000ce4b5  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000026fc  00000000  00000000  000ce4b0  2**2
+ 20 .debug_frame  000026fc  00000000  00000000  000ce508  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1114,7 +1114,7 @@ __STATIC_FORCEINLINE void __disable_irq(void)
 	...
 
 08000838 <setTimer>:
- */
+#include "software_timer.h"
 
 int timer_counter[20] = {0};
 int timer_flag[20] = {0};
